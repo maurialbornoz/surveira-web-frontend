@@ -1,5 +1,6 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { useAuthState } from "../context/authContext";
+import CreatePoll from "../pages/CreatePoll";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/register";
@@ -49,17 +50,21 @@ const AppRouter = () => {
         //   },
         ];
       
-        const authAdminRoutes = [
+        const privateRoutes = [
           {
             path: "/user",
             element: user.isAuthenticated ? <User /> : <Navigate to="/login" />,
+          },
+          {
+            path: "/create_poll",
+            element: user.isAuthenticated ? <CreatePoll /> : <Navigate to="/login" />,
           },
         //   {
         //     path: ADMIN_COURSES_ROUTE,
         //     element: isAdmin ? <UnmoderCoursesPage /> : <NotAccess />,
         //   },
         ];
-        return [...publicRoutes, ...guestRoutes, ...authAdminRoutes];
+        return [...publicRoutes, ...guestRoutes, ...privateRoutes];
       };
 
     let element = useRoutes(routes())

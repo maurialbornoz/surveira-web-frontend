@@ -1,4 +1,8 @@
-import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+// import { Navbar, Container, Nav, NavDropdown } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { useAuthDispatch, useAuthState } from "../context/authContext";
 import { Link } from "react-router-dom";
 const Navigation = () => {
@@ -22,13 +26,18 @@ const Navigation = () => {
                     </Nav>
                     <Nav className="justify-content-end">
                         {user.isAuthenticated 
-                        ? (
-                            <NavDropdown title={user.email} id="navbar-dropdown">
-                                <NavDropdown.Item as={Link} to="/user">My surveys</NavDropdown.Item>
-                                <NavDropdown.Divider></NavDropdown.Divider>
-                                <NavDropdown.Item onClick={logout}>Log Out</NavDropdown.Item>
+                        
 
-                            </NavDropdown>
+                        ? (
+                            <>
+                                <Nav.Link as={Link} to="/create_poll">Create Survey</Nav.Link>
+                                <NavDropdown title={user.email} id="navbar-dropdown">
+                                    <NavDropdown.Item as={Link} to="/user">My surveys</NavDropdown.Item>
+                                    <NavDropdown.Divider></NavDropdown.Divider>
+                                    <NavDropdown.Item onClick={logout}>Log Out</NavDropdown.Item>
+
+                                </NavDropdown>
+                            </>
                         ) : (
                             <>
                                 <Nav.Link as={Link} to="/login">Log In</Nav.Link>
