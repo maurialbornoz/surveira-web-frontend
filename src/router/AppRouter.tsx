@@ -4,16 +4,18 @@ import CreatePoll from "../pages/CreatePoll";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/register";
+import ReplyPoll from "../pages/ReplyPoll";
 import User from "../pages/User";
 const AppRouter = () => {
     const user = useAuthState()
 
     const routes = () => {
         const publicRoutes = [
+
           {
-            path: "/",
-            element: <Home />,
-          },
+            path: "/reply_poll/:id",
+            element: <ReplyPoll/>
+          }
         //   {
         //     path: COURSE_ROUTE,
         //     element: <CoursesPage />,
@@ -37,7 +39,7 @@ const AppRouter = () => {
       
         const guestRoutes = [
           {
-            path: "/login",
+            path: "/",
             element: !user.isAuthenticated ? <Login /> : <Navigate to="/user" />,
           },
           {
@@ -53,11 +55,11 @@ const AppRouter = () => {
         const privateRoutes = [
           {
             path: "/user",
-            element: user.isAuthenticated ? <User /> : <Navigate to="/login" />,
+            element: user.isAuthenticated ? <User /> : <Navigate to="/" />,
           },
           {
             path: "/create_poll",
-            element: user.isAuthenticated ? <CreatePoll /> : <Navigate to="/login" />,
+            element: user.isAuthenticated ? <CreatePoll /> : <Navigate to="/" />,
           },
         //   {
         //     path: ADMIN_COURSES_ROUTE,

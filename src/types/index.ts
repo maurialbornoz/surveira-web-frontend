@@ -34,3 +34,18 @@ export type Answer = {
     id: string,
     content: string
 }
+
+export type UserAnswer = {
+    questionId: number,
+    answer: number,
+    type: QuestionType
+}
+export type PollReplyDetail = {
+    questionId: number,
+    answerId: number
+}
+export type PollReply = {
+    pollReplies: Array<PollReplyDetail>,
+    user: string,
+    poll: number
+}

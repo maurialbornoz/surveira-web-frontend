@@ -21,9 +21,7 @@ const Navigation = () => {
                 <Navbar.Brand as={Link} to="/">Survey</Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar"></Navbar.Toggle>
                 <Navbar.Collapse id="navbar">
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                    </Nav>
+                    <Nav className="me-auto"></Nav>
                     <Nav className="justify-content-end">
                         {user.isAuthenticated 
                         
@@ -40,7 +38,7 @@ const Navigation = () => {
                             </>
                         ) : (
                             <>
-                                <Nav.Link as={Link} to="/login">Log In</Nav.Link>
+                                <Nav.Link as={Link} to="/">Log In</Nav.Link>
                                 <Nav.Link as={Link} to="/register">Create Account</Nav.Link>
                             </>
                         )}

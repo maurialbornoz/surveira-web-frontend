@@ -1,7 +1,7 @@
 export const questionTypeOptions = [
     {name: "Dropdown", value: "SELECT"},
-    {name: "Checkbox", value: "CHECKBOX"},
-    {name: "Multiple choice", value: "RADIO"}
+    {name: "Multiple choice", value: "CHECKBOX"},
+    {name: "Single answer", value: "RADIO"}
 ]
 
 export const MAXIMUN_QUESTION_LIMIT = 30
