@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 import './index.scss';
 import App from './App';
 import axios from "axios"
