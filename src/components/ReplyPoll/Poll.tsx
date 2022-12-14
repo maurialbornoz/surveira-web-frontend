@@ -157,7 +157,7 @@ const Poll = ({id}: PollProps) => {
                             <div>
                                 {renderQuestions()}
                             </div>
-                            <Button type="submit" onClick={prepareForm}>
+                            <Button variant="success" type="submit" onClick={prepareForm}>
                                     {sendingPoll
                                     ?
                                     <>

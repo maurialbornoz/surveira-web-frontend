@@ -1,3 +1,5 @@
+import { ChartData } from "chart.js"
+
 export type User = {
     email: string,
     token: string,
@@ -49,3 +51,20 @@ export type PollReply = {
     user: string,
     poll: number
 }
+export type PollResultDetail = {
+    answer: string,
+    result: number
+}
+export type PollResult = {
+    question: string,
+    details: Array<PollResultDetail>
+}
+
+export type PollChartData = {
+    data: ChartData<'bar'>,
+    title: string,
+    questionId: number
+}
+
+
+export type ChartType = "PIE" | "BAR"

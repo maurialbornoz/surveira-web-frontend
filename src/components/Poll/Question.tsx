@@ -91,7 +91,7 @@ const Question = ({index} : QuestionProps) => {
                 </Row>
                 <Container>
                     {renderAnswers()}
-                    <Button size="sm" className="mt-2" variant="outline-primary"
+                    <Button size="sm" className="mt-2" variant="outline-success"
                         onClick={() => pollDispatch({
                             type: "new_answer",
                             index

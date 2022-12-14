@@ -114,7 +114,7 @@ const Poll = () => {
                     </DragDropContext>
                     <Button 
                         size="lg"
-                        variant="outline-primary"
+                        variant="outline-success"
                         onClick={createPoll}
                         className="mt-5"
                     >
@@ -142,7 +142,7 @@ const Poll = () => {
                     <Toast.Header closeButton={false} >
                         <span>Survey created successfully</span>
                     </Toast.Header>
-                    <Toast.Body>Survey Link:</Toast.Body>
+                    {/* <Toast.Body>Survey Link:</Toast.Body> */}
                 </Toast>
             </ToastContainer>
         </Container>

@@ -83,7 +83,7 @@ const Register = () => {
                                         {errors?.password}
                                     </Form.Control.Feedback>
                                 </Form.Group>
-                                <Button type="submit">
+                                <Button type="submit" variant="success">
                                     {sendingUser 
                                     ? 
                                     <>

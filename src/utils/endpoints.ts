@@ -9,3 +9,4 @@ export const CREATE_POLL_REPLY_ENDPOINT = ENDPOINT_URL + "/polls/reply"
 export const GET_USER_POLLS_ENDPOINT = (page: number) => `${ENDPOINT_URL}/polls?page=${page}&limit=${USER_POLLS_PER_PAGE}`
 export const TOGGLE_POLL_OPENED_ENDPOINT = (uuid: string) => `${ENDPOINT_URL}/polls/${uuid}`;
 export const DELETE_POLL_ENDPOINT = (uuid: string) => `${ENDPOINT_URL}/polls/${uuid}`;
+export const GET_POLL_RESULTS_ENDPOINT = (uuid: string) => `${ENDPOINT_URL}/polls/${uuid}/results`;

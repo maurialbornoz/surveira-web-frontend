@@ -15,6 +15,8 @@ import Toast from "react-bootstrap/Toast";
 import { confirmAlert } from "react-confirm-alert";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 const User = () => {
     const [currentPage, setCurrentPage] = useState<number>(0)
@@ -22,6 +24,10 @@ const User = () => {
     const [totalRecords, setTotalRecords] = useState<number>(0)
     const [showToast, setShowToast] = useState<boolean>(false)
     const [polls, setPolls] = useState<Array<any>>([])
+
+    const navigate = useNavigate()
+
+
     useEffect(() => {
         fetchPolls()
     }, [currentPage])
@@ -72,8 +78,8 @@ const User = () => {
 
     const renderTable = () => {
         return (
-            <Table className="mt-5 polls-table" striped bordered hover responsive>
-                <thead>
+            <Table className="mt-5 polls-table" bordered hover responsive >
+                <thead >
                     <tr>
                         <th>Title</th>
                         <th>More Surveys</th>
@@ -87,6 +93,7 @@ const User = () => {
                                 <td>{poll.content}</td>
                                 <td>
                                     <Switch
+                                    
                                         label={!!poll.opened ? "Activated" : "Disabled"}
                                         checked={!!poll.opened}
                                         id={poll.pollId}
@@ -102,7 +109,7 @@ const User = () => {
                                             setShowToast(true)
                                         }}
                                     ><Share></Share></span>
-                                    <span data-tip="Show"><List></List></span>
+                                    <span data-tip="Show" onClick={() => navigate(`/results/${poll.pollId}`)}><List></List></span>
                                     <span data-tip="Delete survey" onClick={() => handleDeletePoll(poll.pollId)}><Trash></Trash></span>
                                 </td>
                             </tr>

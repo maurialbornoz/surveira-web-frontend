@@ -3,8 +3,10 @@ import { useAuthState } from "../context/authContext";
 import CreatePoll from "../pages/CreatePoll";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import NotFound from "../pages/NotFound";
 import Register from "../pages/register";
 import ReplyPoll from "../pages/ReplyPoll";
+import Results from "../pages/Results";
 import User from "../pages/User";
 const AppRouter = () => {
     const user = useAuthState()
@@ -15,6 +17,10 @@ const AppRouter = () => {
           {
             path: "/reply_poll/:id",
             element: <ReplyPoll/>
+          },
+          {
+            path: "*",
+            element: <NotFound/>
           }
         //   {
         //     path: COURSE_ROUTE,
@@ -61,7 +67,11 @@ const AppRouter = () => {
             path: "/create_poll",
             element: user.isAuthenticated ? <CreatePoll /> : <Navigate to="/" />,
           },
-        //   {
+          {
+            path: "/results/:id",
+            element: user.isAuthenticated ? <Results /> : <Navigate to="/" />,
+          },
+          //   {
         //     path: ADMIN_COURSES_ROUTE,
         //     element: isAdmin ? <UnmoderCoursesPage /> : <NotAccess />,
         //   },

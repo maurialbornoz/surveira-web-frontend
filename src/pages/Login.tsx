@@ -34,8 +34,6 @@ const Login = () => {
             if(errors.response){
                 errors.response.status === 403 && setError("Invalid credentials")
             }
-            //setError(errors.response)
-            // console.log(errors.response)
             setSendingUser(false)
         }
 
@@ -69,7 +67,7 @@ const Login = () => {
                                     ></Form.Control>
                                  
                                 </Form.Group>
-                                <Button type="submit">
+                                <Button type="submit" variant="success">
                                     {sendingUser 
                                     ? 
                                     <>
