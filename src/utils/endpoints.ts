@@ -1,6 +1,7 @@
 import { USER_POLLS_PER_PAGE } from "./constants";
 
-const ENDPOINT_URL = "https://surveira-web-backend-production.up.railway.app";
+// const ENDPOINT_URL = "https://surveira-web-backend-production.up.railway.app";
+const ENDPOINT_URL = "https://surveira-backend.onrender.com";
 
 // const ENDPOINT_URL = "http://localhost:8080";
 
